@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies - Movie Night</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="mystyle.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg glass-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html" style="color: #ffcc00;">Movie Night</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="page-1.html">Discover</a></li>
+          <li class="nav-item"><a class="nav-link" href="page-2.html">Shuffle</a></li>
+          <li class="nav-item"><a class="nav-link" href="page-3.html">Movies</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container movies-page">
+
+      <section class="movies-hero text-center">
+        <h1>🎬 Movies</h1>
+        <p>Browse curated collections for every kind of movie night</p>
+
+        <div class="movies-search-wrap">
+          <input
+            type="text"
+            id="moviesSearch"
+            class="movies-search-input"
+            placeholder="Search movies on this page..."
+          >
+        </div>
+      </section>
+
+      <section class="movie-section">
+  <div class="section-heading">
+    <h2>🔥 Popular Now</h2>
+    <p>What everyone is watching right now</p>
+  </div>
+  <div id="popularMovies" class="movie-grid"></div>
+  <div class="text-center">
+    <button id="loadMorePopular" class="load-more-btn">Load More</button>
+  </div>
+</section>
+
+<section class="movie-section">
+  <div class="section-heading">
+    <h2>⭐ Top Rated</h2>
+    <p>Highly rated favourites worth your time</p>
+  </div>
+  <div id="topRatedMovies" class="movie-grid"></div>
+  <div class="text-center">
+    <button id="loadMoreTopRated" class="load-more-btn">Load More</button>
+  </div>
+</section>
+
+<section class="movie-section">
+  <div class="section-heading">
+    <h2>🎞️ Classics</h2>
+    <p>Timeless picks from earlier decades</p>
+  </div>
+  <div id="classicMovies" class="movie-grid"></div>
+  <div class="text-center">
+    <button id="loadMoreClassics" class="load-more-btn">Load More</button>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="glass-footer text-center">
+      <div class="footer-content">
+        <p class="mb-0">© 2026 Movie Night — Find your perfect movie 🍿</p>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- MOVIES MODAL -->
+    <div class="modal fade" id="moviesModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="moviesModalTitle"></h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body text-center">
+            <img id="moviesModalImg" class="img-fluid mb-3" alt="">
+            <p id="moviesModalYear"></p>
+            <p id="moviesModalRating"></p>
+            <p id="moviesModalDesc"></p>
+
+            <div id="moviesTrailerWrap" style="display:none; margin-top: 10px;">
+              <a id="moviesTrailerBtn" class="screen-btn" target="_blank">
+                ▶ Watch Trailer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="myscript.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

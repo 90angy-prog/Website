@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Movie Night - Find your perfect movie">
+  <title>Movie Night</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="mystyle.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg glass-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html" style="color:#ffcc00;">Movie Night</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="page-1.html">Discover</a></li>
+          <li class="nav-item"><a class="nav-link" href="page-2.html">Shuffle</a></li>
+          <li class="nav-item"><a class="nav-link" href="page-3.html">Movies</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>🎥 Now in Cinemas</h1>
+        <p>Catch the latest movies on the big screen</p>
+
+        <div class="cinema-row">
+          <article class="card movie-card">
+            <div class="movie-poster">
+              <img src="Images/Project Hail Mary.jpg" alt="Project Hail Mary">
+            </div>
+            <div class="movie-bottom">
+              <h6>Project Hail Mary</h6>
+              <p>2026</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCinema1">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-poster">
+              <img src="Images/The Magic Faraway Tree.jpg" alt="The Magic Faraway Tree">
+            </div>
+            <div class="movie-bottom">
+              <h6>The Magic Faraway Tree</h6>
+              <p>2026</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCinema2">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-poster">
+              <img src="Images/The Super Mario Galaxy Movie.jpg" alt="The Super Mario Galaxy Movie">
+            </div>
+            <div class="movie-bottom">
+              <h6>The Super Mario Galaxy Movie</h6>
+              <p>2026</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalCinema3">More Info</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STREAMING TITLE -->
+    <section class="hero small-hero">
+      <div class="hero-content">
+        <h1>🍿 Top 10 Streaming Now</h1>
+        <p>Trending movies across Netflix, Prime & Disney+</p>
+      </div>
+    </section>
+
+    <!-- TOP 10 MOVIES -->
+    <div class="page">
+      <div class="marquee">
+        <div class="track" id="track">
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.netflix.com/search?q=Louis%20Theroux%20Inside%20the%20Manosphere" target="_blank" class="stream-btn">
+                <i class="bi bi-play-circle"></i>Netflix
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/1 Movie.jpg" alt="Louis Theroux Inside the Manosphere">
+            </div>
+            <div class="movie-bottom">
+              <h6>Louis Theroux Inside the Manosphere</h6>
+              <p>2026</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal1">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.netflix.com/search?q=Bad%20Boys%20Ride%20or%20Die" target="_blank" class="stream-btn">
+                <i class="bi bi-play-circle"></i>Netflix
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/2 Movie.jpg" alt="Bad Boys Ride or Die">
+            </div>
+            <div class="movie-bottom">
+              <h6>Bad Boys Ride or Die</h6>
+              <p>2024</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal2">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.netflix.com/title/80152442" target="_blank" class="stream-btn">
+                <i class="bi bi-play-circle"></i>Netflix
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/3 Movie.jpg" alt="War Machine">
+            </div>
+            <div class="movie-bottom">
+              <h6>War Machine</h6>
+              <p>2026</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal3">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=Borderlands" target="_blank" class="stream-btn">
+                <i class="bi bi-film"></i>Prime Video
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/4 Movie.jpg" alt="Borderlands">
+            </div>
+            <div class="movie-bottom">
+              <h6>Borderlands</h6>
+              <p>2024</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal4">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=Confession%20of%20a%20Female%20Serial%20Killer" target="_blank" class="stream-btn">
+                <i class="bi bi-film"></i>Prime Video
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/5 Movie.jpg" alt="Confession of a Female Serial Killer">
+            </div>
+            <div class="movie-bottom">
+              <h6>Confession of a Female Serial Killer</h6>
+              <p>2025</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal5">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=Underworld%20Evolution" target="_blank" class="stream-btn">
+                <i class="bi bi-film"></i>Prime Video
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/6 Movie.jpg" alt="Underworld: Evolution">
+            </div>
+            <div class="movie-bottom">
+              <h6>Underworld: Evolution</h6>
+              <p>2006</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal6">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=The%20Bluff" target="_blank" class="stream-btn">
+                <i class="bi bi-film"></i>Prime Video
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/7 Movie.jpg" alt="The Bluff">
+            </div>
+            <div class="movie-bottom">
+              <h6>The Bluff</h6>
+              <p>2026</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal7">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.disneyplus.com/search?q=Ready%20or%20Not" target="_blank" class="stream-btn">
+                <i class="bi bi-star"></i>Disney+
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/8 Movie.jpg" alt="Ready or Not">
+            </div>
+            <div class="movie-bottom">
+              <h6>Ready or Not</h6>
+              <p>2019</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal8">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.disneyplus.com/search?q=Predator%20Badlands" target="_blank" class="stream-btn">
+                <i class="bi bi-star"></i>Disney+
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/9 Movie.jpg" alt="Predator Badlands">
+            </div>
+            <div class="movie-bottom">
+              <h6>Predator Badlands</h6>
+              <p>2025</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal9">More Info</button>
+            </div>
+          </article>
+
+          <article class="card movie-card">
+            <div class="movie-top">
+              <a href="https://www.disneyplus.com/search?q=Deadpool%20Wolverine" target="_blank" class="stream-btn">
+                <i class="bi bi-star"></i>Disney+
+              </a>
+            </div>
+            <div class="movie-poster">
+              <img src="Images/10 Movie.jpg" alt="Deadpool and Wolverine">
+            </div>
+            <div class="movie-bottom">
+              <h6>Deadpool & Wolverine</h6>
+              <p>2024</p>
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal10">More Info</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP 10 MODALS -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel1">Louis Theroux Inside the Manosphere</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/1 Movie.jpg" alt="Louis Theroux Inside the Manosphere" class="img-fluid mb-3">
+            <p>Release Year: 2026</p>
+            <p>Louis Theroux: Inside the Manosphere explores the online subculture of influencers promoting extreme masculinity, dating advice, and anti-feminist views to young men.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel2">Bad Boys Ride or Die</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/2 Movie.jpg" alt="Bad Boys Ride or Die" class="img-fluid mb-3">
+            <p>Release Year: 2024</p>
+            <p>Bad Boys: Ride or Die follows detectives Mike Lowrey and Marcus Burnett as they uncover a dangerous conspiracy tied to their late captain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel3">War Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/3 Movie.jpg" alt="War Machine" class="img-fluid mb-3">
+            <p>Release Year: 2026</p>
+            <p>War Machine centers on a high-ranking military officer navigating the complexities of modern warfare, leadership, and political pressure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modalLabel4" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel4">Borderlands</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/4 Movie.jpg" alt="Borderlands" class="img-fluid mb-3">
+            <p>Release Year: 2024</p>
+            <p>Borderlands follows a group of unlikely heroes navigating a chaotic, lawless world in search of a powerful artifact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modalLabel5" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel5">Confession of a Female Serial Killer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/5 Movie.jpg" alt="Confession of a Female Serial Killer" class="img-fluid mb-3">
+            <p>Release Year: 2025</p>
+            <p>Confession of a Female Serial Killer examines the chilling story of a woman leading a double life while committing a series of calculated crimes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modalLabel6" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel6">Underworld: Evolution</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/6 Movie.jpg" alt="Underworld: Evolution" class="img-fluid mb-3">
+            <p>Release Year: 2006</p>
+            <p>Underworld: Evolution continues the story of the war between vampires and werewolves as Selene uncovers secrets about her past.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="modalLabel7" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel7">The Bluff</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/7 Movie.jpg" alt="The Bluff" class="img-fluid mb-3">
+            <p>Release Year: 2026</p>
+            <p>The Bluff follows a determined individual navigating deception, power struggles, and hidden agendas in a high-stakes environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="modalLabel8" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel8">Ready or Not</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/8 Movie.jpg" alt="Ready or Not" class="img-fluid mb-3">
+            <p>Release Year: 2019</p>
+            <p>Ready or Not follows a young bride who is drawn into a deadly game with her new in-laws as part of a family tradition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="modalLabel9" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel9">Predator Badlands</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/9 Movie.jpg" alt="Predator Badlands" class="img-fluid mb-3">
+            <p>Release Year: 2025</p>
+            <p>Predator: Badlands follows a group of individuals stranded in a hostile environment where they become targets of a deadly extraterrestrial hunter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="modalLabel10" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel10">Deadpool & Wolverine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/10 Movie.jpg" alt="Deadpool and Wolverine" class="img-fluid mb-3">
+            <p>Release Year: 2024</p>
+            <p>Deadpool & Wolverine follows the unlikely partnership between Deadpool and Wolverine as they are forced to work together on a dangerous mission.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CINEMA MODALS -->
+    <div class="modal fade" id="modalCinema1" tabindex="-1" aria-labelledby="modalCinemaLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCinemaLabel1">Project Hail Mary</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/Project Hail Mary.jpg" alt="Project Hail Mary">
+            <p>Release Year: 2026</p>
+            <p>Project Hail Mary centers on a lone astronaut on a mission to save Earth, facing impossible odds, isolation, and a race against time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalCinema2" tabindex="-1" aria-labelledby="modalCinemaLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCinemaLabel2">The Magic Faraway Tree</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/The Magic Faraway Tree.jpg" alt="The Magic Faraway Tree">
+            <p>Release Year: 2026</p>
+            <p>The Magic Faraway Tree follows a magical adventure where children discover a hidden tree that leads to fantastical worlds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalCinema3" tabindex="-1" aria-labelledby="modalCinemaLabel3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCinemaLabel3">The Super Mario Galaxy Movie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="Images/The Super Mario Galaxy Movie.jpg" alt="The Super Mario Galaxy Movie">
+            <p>Release Year: 2026</p>
+            <p>The Super Mario Galaxy Movie brings the iconic video game characters to life as Mario embarks on a cosmic adventure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer text-center">
+  <div class="footer-content">
+    <p class="mb-0">© 2026 Movie Night — Find your perfect movie 🍿</p>
+  </div>
+</footer>
+
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="myscript.js"></script>
+</body>
+</html>

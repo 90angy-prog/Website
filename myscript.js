@@ -90,6 +90,37 @@ if (backToTopBtn) {
 // ===== TMDB FINDER =====
 const API_KEY = "11d0550e6e15eab2f274fd22de846d4c";
 
+// ===== TOP 10 CAROUSEL POSTERS FROM TMDB =====
+async function loadCarouselPosters() {
+  const posters = document.querySelectorAll(".tmdb-carousel-poster");
+
+  for (const poster of posters) {
+    const title = poster.dataset.title;
+    const year = poster.dataset.year;
+
+    try {
+      let url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
+
+      if (year) {
+        url += `&year=${year}`;
+      }
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.results && data.results.length > 0 && data.results[0].poster_path) {
+        poster.src = `https://image.tmdb.org/t/p/w500${data.results[0].poster_path}`;
+      }
+    } catch (error) {
+      console.log("Could not load poster for:", title);
+    }
+  }
+}
+
+loadCarouselPosters();
+
+
+// ===== TMDB FINDER =====
 if ($("#searchBtn").length) {
   $("#searchBtn").click(function () {
     $("#searchBtn").prop("disabled", true).text("Loading...");

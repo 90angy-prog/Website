@@ -822,31 +822,66 @@ p {
 }
 
 .random-page.mood-sad {
-  background: linear-gradient(180deg, rgba(70, 90, 140, 0.18), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(70, 130, 220, 0.26),
+    rgba(23, 31, 65, 0.7)
+  );
+  box-shadow: inset 0 0 80px rgba(70, 130, 220, 0.12);
 }
 
 .random-page.mood-happy {
-  background: linear-gradient(180deg, rgba(255, 204, 0, 0.10), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 215, 0, 0.30),
+    rgba(23, 31, 65, 0.7)
+  );
+  box-shadow: inset 0 0 80px rgba(255, 204, 0, 0.14);
 }
 
 .random-page.mood-bored {
-  background: linear-gradient(180deg, rgba(120, 120, 140, 0.14), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(150, 150, 170, 0.24),
+    rgba(23, 31, 65, 0.75)
+  );
+  box-shadow: inset 0 0 80px rgba(180, 180, 200, 0.10);
 }
 
 .random-page.mood-stressed {
-  background: linear-gradient(180deg, rgba(80, 150, 180, 0.14), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 190, 180, 0.24),
+    rgba(23, 31, 65, 0.75)
+  );
+  box-shadow: inset 0 0 80px rgba(0, 190, 180, 0.12);
 }
 
 .random-page.mood-romantic {
-  background: linear-gradient(180deg, rgba(210, 90, 140, 0.16), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 80, 150, 0.28),
+    rgba(23, 31, 65, 0.72)
+  );
+  box-shadow: inset 0 0 80px rgba(255, 80, 150, 0.14);
 }
 
 .random-page.mood-excited {
-  background: linear-gradient(180deg, rgba(255, 120, 60, 0.16), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 110, 40, 0.30),
+    rgba(23, 31, 65, 0.7)
+  );
+  box-shadow: inset 0 0 80px rgba(255, 110, 40, 0.14);
 }
 
 .random-page.mood-tired {
-  background: linear-gradient(180deg, rgba(140, 120, 180, 0.14), rgba(23, 31, 65, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(150, 110, 255, 0.25),
+    rgba(23, 31, 65, 0.75)
+  );
+  box-shadow: inset 0 0 80px rgba(150, 110, 255, 0.12);
 }
 
 .mode-btn {

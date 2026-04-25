@@ -119,6 +119,34 @@ async function loadCarouselPosters() {
 
 loadCarouselPosters();
 
+// ===== MODAL POSTERS FROM TMDB =====
+async function loadModalPosters() {
+  const posters = document.querySelectorAll(".tmdb-modal-poster");
+
+  for (const poster of posters) {
+    const title = poster.dataset.title;
+    const year = poster.dataset.year;
+
+    try {
+      let url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
+
+      if (year) {
+        url += `&year=${year}`;
+      }
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.results && data.results.length > 0 && data.results[0].poster_path) {
+        poster.src = `https://image.tmdb.org/t/p/w500${data.results[0].poster_path}`;
+      }
+    } catch (error) {
+      console.log("Modal poster not found:", title);
+    }
+  }
+}
+
+loadModalPosters();
 
 // ===== TMDB FINDER =====
 if ($("#searchBtn").length) {

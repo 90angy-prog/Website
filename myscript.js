@@ -114,6 +114,25 @@ if (marquee && track) {
   });
 }
 
+let touchStartX = 0;
+let touchScrollLeft = 0;
+
+marquee.addEventListener("touchstart", (e) => {
+  track.style.animationPlayState = "paused";
+  touchStartX = e.touches[0].pageX - marquee.offsetLeft;
+  touchScrollLeft = marquee.scrollLeft;
+});
+
+marquee.addEventListener("touchmove", (e) => {
+  const x = e.touches[0].pageX - marquee.offsetLeft;
+  const walk = (x - touchStartX) * 1.5;
+  marquee.scrollLeft = touchScrollLeft - walk;
+});
+
+marquee.addEventListener("touchend", () => {
+  track.style.animationPlayState = "running";
+});
+
 // ===== BACK TO TOP =====
 const backToTopBtn = document.getElementById("backToTop");
 

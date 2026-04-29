@@ -67,6 +67,53 @@ if (track) {
   });
 }
 
+// ===== DRAG / SWIPE MARQUEE =====
+const marquee = document.querySelector(".marquee");
+
+if (marquee && track) {
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  marquee.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    marquee.classList.add("dragging");
+    track.style.animationPlayState = "paused";
+
+    startX = e.pageX - marquee.offsetLeft;
+    scrollLeft = marquee.scrollLeft;
+  });
+
+  marquee.addEventListener("mouseleave", () => {
+    isDragging = false;
+    marquee.classList.remove("dragging");
+    track.style.animationPlayState = "running";
+  });
+
+  marquee.addEventListener("mouseup", () => {
+    isDragging = false;
+    marquee.classList.remove("dragging");
+    track.style.animationPlayState = "running";
+  });
+
+  marquee.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    e.preventDefault();
+    const x = e.pageX - marquee.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    marquee.scrollLeft = scrollLeft - walk;
+  });
+
+  marquee.addEventListener("touchstart", () => {
+    track.style.animationPlayState = "paused";
+  });
+
+  marquee.addEventListener("touchend", () => {
+    track.style.animationPlayState = "running";
+  });
+}
+
 // ===== BACK TO TOP =====
 const backToTopBtn = document.getElementById("backToTop");
 

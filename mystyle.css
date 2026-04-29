@@ -1038,3 +1038,13 @@ p {
   background: rgba(255,255,255,0.05);
   border: 1px dashed rgba(255,255,255,0.3);
 }
+
+/* ===== DRAG CURSOR ===== */
+.marquee {
+  cursor: grab;
+  user-select: none;
+}
+
+.marquee:active {
+  cursor: grabbing;
+}

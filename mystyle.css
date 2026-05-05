@@ -1202,3 +1202,14 @@ p {
 #formMessage.show {
   display: block;
 }
+
+/* ===== FIX IMAGE DRAG ISSUE IN CAROUSEL ===== */
+.marquee img {
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.marquee .movie-card {
+  user-select: none;
+}

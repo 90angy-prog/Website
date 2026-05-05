@@ -1043,16 +1043,13 @@ p {
 .marquee {
   cursor: grab;
   user-select: none;
-}
-
-.marquee:active {
-  cursor: grabbing;
-}
-
-.marquee {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+}
+
+.marquee.dragging {
+  cursor: grabbing;
 }
 
 .marquee::-webkit-scrollbar {

@@ -77,33 +77,35 @@ if (marquee && track) {
   let touchStartX = 0;
   let touchScrollLeft = 0;
 
-  // 🖱️ Mouse drag
-  marquee.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    track.style.animationPlayState = "paused";
+  // 🖱️ Mouse Drag
+marquee.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  marquee.classList.add("dragging");
+  track.style.animationPlayState = "paused";
 
-    startX = e.pageX - marquee.offsetLeft;
-    scrollLeft = marquee.scrollLeft;
-  });
+  startX = e.pageX;
+  scrollLeft = marquee.scrollLeft;
+});
 
-  marquee.addEventListener("mouseleave", () => {
-    isDragging = false;
-    track.style.animationPlayState = "running";
-  });
+marquee.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
 
-  marquee.addEventListener("mouseup", () => {
-    isDragging = false;
-    track.style.animationPlayState = "running";
-  });
+  e.preventDefault();
+  const distance = e.pageX - startX;
+  marquee.scrollLeft = scrollLeft - distance;
+});
 
-  marquee.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+marquee.addEventListener("mouseup", () => {
+  isDragging = false;
+  marquee.classList.remove("dragging");
+  track.style.animationPlayState = "running";
+});
 
-    e.preventDefault();
-    const x = e.pageX - marquee.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    marquee.scrollLeft = scrollLeft - walk;
-  });
+marquee.addEventListener("mouseleave", () => {
+  isDragging = false;
+  marquee.classList.remove("dragging");
+  track.style.animationPlayState = "running";
+});
 
   // 📱 Touch swipe
   marquee.addEventListener("touchstart", (e) => {

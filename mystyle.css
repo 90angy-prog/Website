@@ -1200,3 +1200,7 @@ p {
   backdrop-filter: blur(6px);
   color: #ffcc00;
 }
+
+#formMessage {
+  display: none; /* 👈 hidden by default */
+}

@@ -730,7 +730,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
-    formMessage.textContent = "";
+    formMessage.style.display = "none";
+formMessage.textContent = "";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {

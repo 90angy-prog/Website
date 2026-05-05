@@ -730,8 +730,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
-    formMessage.style.display = "none";
-formMessage.textContent = "";
+
+    formMessage.textContent = "";
+    formMessage.classList.remove("show");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -744,14 +745,17 @@ formMessage.textContent = "";
       if (data.success) {
         formMessage.textContent = "Message sent successfully 🎬";
         formMessage.style.color = "#ffcc00";
+        formMessage.classList.add("show");
         contactForm.reset();
       } else {
         formMessage.textContent = data.message || "Something went wrong.";
         formMessage.style.color = "#ff6b6b";
+        formMessage.classList.add("show");
       }
     } catch (error) {
       formMessage.textContent = "Something went wrong. Please try again.";
       formMessage.style.color = "#ff6b6b";
+      formMessage.classList.add("show");
     } finally {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;

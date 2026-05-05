@@ -1186,10 +1186,16 @@ p {
   opacity: 0.2;
 }
 
-#formMessage {
+#formMessage:empty {
+  display: none;
+}
+
+#formMessage.show {
+  display: block;
+
   margin-top: 15px;
-  font-size: 1.1rem;   /* 👈 slightly bigger than normal text */
-  font-weight: 500;    /* 👈 not too bold */
+  font-size: 1.1rem;
+  font-weight: 500;
   text-align: center;
 
   background: rgba(255, 204, 0, 0.12);
@@ -1199,8 +1205,4 @@ p {
 
   backdrop-filter: blur(6px);
   color: #ffcc00;
-}
-
-#formMessage {
-  display: none; /* 👈 hidden by default */
 }

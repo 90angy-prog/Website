@@ -1187,7 +1187,16 @@ p {
 }
 
 #formMessage {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  margin-top: 15px;
+  font-size: 1.1rem;   /* 👈 slightly bigger than normal text */
+  font-weight: 500;    /* 👈 not too bold */
+  text-align: center;
+
+  background: rgba(255, 204, 0, 0.12);
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  backdrop-filter: blur(6px);
+  color: #ffcc00;
 }

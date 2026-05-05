@@ -713,16 +713,19 @@ $(document).on("click", ".mood-quick-btn", function () {
 });
 
 // ===== CONTACT FORM (WEB3FORMS AJAX) =====
-const form = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
 
-if (form) {
-  const submitBtn = form.querySelector('button[type="submit"]');
+  if (!contactForm) return;
+
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
   const formMessage = document.getElementById("formMessage");
 
-  form.addEventListener("submit", async function (e) {
+  contactForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    e.stopPropagation();
 
-    const formData = new FormData(form);
+    const formData = new FormData(contactForm);
     const originalText = submitBtn.textContent;
 
     submitBtn.textContent = "Sending...";
@@ -740,7 +743,7 @@ if (form) {
       if (data.success) {
         formMessage.textContent = "Message sent successfully 🎬";
         formMessage.style.color = "#ffcc00";
-        form.reset();
+        contactForm.reset();
       } else {
         formMessage.textContent = data.message || "Something went wrong.";
         formMessage.style.color = "#ff6b6b";
@@ -753,4 +756,4 @@ if (form) {
       submitBtn.disabled = false;
     }
   });
-}
+});

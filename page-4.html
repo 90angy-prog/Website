@@ -11,6 +11,7 @@
   <link href="mystyle.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -32,7 +33,8 @@
       </div>
     </div>
   </nav>
-<main class="page contact-page">
+
+  <main class="page contact-page">
 
     <section class="hero small-hero">
       <div class="hero-content">
@@ -45,51 +47,52 @@
       <div class="contact-card">
         <h2>We would love to hear from you</h2>
 
-        
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="69c12f16-0ca1-4705-9626-2fcdbf123b65">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="69c12f16-0ca1-4705-9626-2fcdbf123b65">
 
-  <div class="form-group">
-    <input type="text" name="name" placeholder="👤 Your Name" required>
-  </div>
+          <div class="form-group">
+            <input type="text" name="name" placeholder="👤 Your Name" required>
+          </div>
 
-  <div class="form-group">
-    <input type="email" name="email" placeholder="📧 Your Email" required>
-  </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="📧 Your Email" required>
+          </div>
 
-  <div class="form-group">
-    <select name="subject" required>
-      <option value="">Select a topic</option>
-      <option>General Question</option>
-      <option>Movie Suggestion</option>
-      <option>Bug / Issue</option>
-      <option>Feedback</option>
-    </select>
-  </div>
+          <div class="form-group">
+            <select name="subject" required>
+              <option value="">Select a topic</option>
+              <option value="General Question">General Question</option>
+              <option value="Movie Suggestion">Movie Suggestion</option>
+              <option value="Bug / Issue">Bug / Issue</option>
+              <option value="Feedback">Feedback</option>
+            </select>
+          </div>
 
-  <div class="form-group">
-    <input type="text" name="movie" placeholder="🎬 Suggested Movie (optional)">
-  </div>
+          <div class="form-group">
+            <input type="text" name="movie" placeholder="🎬 Suggested Movie (optional)">
+          </div>
 
-  <div class="form-group">
-    <textarea name="message" rows="4" placeholder="✉️ Your Message" required></textarea>
-  </div>
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="✉️ Your Message" required></textarea>
+          </div>
 
-  <button type="submit" class="contact-btn">Send Message</button>
-</form>
+          <button type="submit" class="contact-btn">Send Message</button>
+
+          <p id="formMessage"></p>
+        </form>
       </div>
     </section>
 
   </main>
 
   <footer class="glass-footer text-center">
-      <div class="footer-content">
-        <p class="mb-0">© 2026 Movie Night — Find your perfect movie 🍿</p>
-      </div>
-    </footer>
+    <div class="footer-content">
+      <p class="mb-0">© 2026 Movie Night — Find your perfect movie 🍿</p>
+    </div>
+  </footer>
 
-        <script src="myscript.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="myscript.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

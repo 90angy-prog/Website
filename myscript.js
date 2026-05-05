@@ -72,12 +72,14 @@ const marquee = document.querySelector(".marquee");
 
 if (marquee && track) {
   let isDragging = false;
-  let startX;
-  let scrollLeft;
+  let startX = 0;
+  let scrollLeft = 0;
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
 
+  // 🖱️ Mouse drag
   marquee.addEventListener("mousedown", (e) => {
     isDragging = true;
-    marquee.classList.add("dragging");
     track.style.animationPlayState = "paused";
 
     startX = e.pageX - marquee.offsetLeft;
@@ -86,13 +88,11 @@ if (marquee && track) {
 
   marquee.addEventListener("mouseleave", () => {
     isDragging = false;
-    marquee.classList.remove("dragging");
     track.style.animationPlayState = "running";
   });
 
   marquee.addEventListener("mouseup", () => {
     isDragging = false;
-    marquee.classList.remove("dragging");
     track.style.animationPlayState = "running";
   });
 
@@ -105,33 +105,23 @@ if (marquee && track) {
     marquee.scrollLeft = scrollLeft - walk;
   });
 
-  marquee.addEventListener("touchstart", () => {
+  // 📱 Touch swipe
+  marquee.addEventListener("touchstart", (e) => {
     track.style.animationPlayState = "paused";
+    touchStartX = e.touches[0].pageX - marquee.offsetLeft;
+    touchScrollLeft = marquee.scrollLeft;
+  });
+
+  marquee.addEventListener("touchmove", (e) => {
+    const x = e.touches[0].pageX - marquee.offsetLeft;
+    const walk = (x - touchStartX) * 1.5;
+    marquee.scrollLeft = touchScrollLeft - walk;
   });
 
   marquee.addEventListener("touchend", () => {
     track.style.animationPlayState = "running";
   });
 }
-
-let touchStartX = 0;
-let touchScrollLeft = 0;
-
-marquee.addEventListener("touchstart", (e) => {
-  track.style.animationPlayState = "paused";
-  touchStartX = e.touches[0].pageX - marquee.offsetLeft;
-  touchScrollLeft = marquee.scrollLeft;
-});
-
-marquee.addEventListener("touchmove", (e) => {
-  const x = e.touches[0].pageX - marquee.offsetLeft;
-  const walk = (x - touchStartX) * 1.5;
-  marquee.scrollLeft = touchScrollLeft - walk;
-});
-
-marquee.addEventListener("touchend", () => {
-  track.style.animationPlayState = "running";
-});
 
 // ===== BACK TO TOP =====
 const backToTopBtn = document.getElementById("backToTop");

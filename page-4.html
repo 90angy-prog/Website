@@ -43,13 +43,41 @@
 
     <section class="contact-container">
       <div class="contact-card">
-        <h2>We wouldd love to hear from you</h2>
-        <p>This is where the form will go 👇</p>
+        <h2>We would love to hear from you</h2>
 
-        <!-- Placeholder for now -->
-        <div class="contact-placeholder">
-          <p>Form coming soon...</p>
-        </div>
+        
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="YOUR_KEY">
+  <input type="hidden" name="redirect" value="thank-you.html">
+
+  <div class="form-group">
+    <input type="text" name="name" placeholder="👤 Your Name" required>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder="📧 Your Email" required>
+  </div>
+
+  <div class="form-group">
+    <select name="subject" required>
+      <option value="">Select a topic</option>
+      <option>General Question</option>
+      <option>Movie Suggestion</option>
+      <option>Bug / Issue</option>
+      <option>Feedback</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="movie" placeholder="🎬 Suggested Movie (optional)">
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" rows="4" placeholder="✉️ Your Message" required></textarea>
+  </div>
+
+  <button type="submit" class="contact-btn">Send Message</button>
+</form>
       </div>
     </section>
 

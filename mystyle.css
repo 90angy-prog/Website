@@ -1058,3 +1058,130 @@ p {
 .marquee::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== CONTACT FORM ===== */
+.contact-subtext {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+/* form spacing */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* inputs */
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+
+  background: rgba(255,255,255,0.06);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+}
+
+/* placeholders */
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.3px;
+}
+
+/* focus effect */
+.contact-card input:focus,
+.contact-card textarea:focus {
+  border-color: rgba(255, 204, 0, 0.6);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.2);
+}
+
+/* textarea resize off */
+.contact-card textarea {
+  resize: none;
+}
+
+/* button */
+.contact-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: all 0.3s ease;
+}
+
+/* button hover */
+.contact-btn:hover {
+  background: rgba(255,255,255,0.25);
+  color: #ffcc00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.contact-card select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+
+  background: rgba(255,255,255,0.06);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  appearance: none;
+}
+
+.contact-card select option {
+  color: black;
+}
+
+/* ===== CONTACT CARD GLASS SHINE ===== */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Shine layer (background) */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.10),
+    transparent
+  );
+
+  transform: translateX(-120%) skewX(-25deg);
+  transition: 1.8s ease, opacity 0.4s ease;
+
+  z-index: 0;
+}
+
+/* hover animation */
+.contact-card:hover::before {
+  transform: translateX(120%) skewX(-25deg);
+}
+
+/* ✨ dim when typing */
+.contact-card:focus-within::before {
+  opacity: 0.2;
+}

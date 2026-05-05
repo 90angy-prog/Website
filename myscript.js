@@ -722,21 +722,22 @@ $(document).on("click", ".mood-quick-btn", function () {
   runShuffle();
 });
 
-// ===== CONTACT FORM (WEB3FORMS) =====
-const form = document.getElementById('contactForm');
+// ===== CONTACT FORM (WEB3FORMS AJAX) =====
+const form = document.getElementById("contactForm");
 
 if (form) {
   const submitBtn = form.querySelector('button[type="submit"]');
+  const formMessage = document.getElementById("formMessage");
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const formData = new FormData(form);
-
     const originalText = submitBtn.textContent;
 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
+    formMessage.textContent = "";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -746,15 +747,17 @@ if (form) {
 
       const data = await response.json();
 
-      if (response.ok) {
-        alert("Success! Your message has been sent 🎬");
+      if (data.success) {
+        formMessage.textContent = "Message sent successfully 🎬";
+        formMessage.style.color = "#ffcc00";
         form.reset();
       } else {
-        alert("Error: " + data.message);
+        formMessage.textContent = data.message || "Something went wrong.";
+        formMessage.style.color = "#ff6b6b";
       }
-
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      formMessage.textContent = "Something went wrong. Please try again.";
+      formMessage.style.color = "#ff6b6b";
     } finally {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;

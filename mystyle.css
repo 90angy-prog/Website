@@ -1185,3 +1185,9 @@ p {
 .contact-card:focus-within::before {
   opacity: 0.2;
 }
+
+#formMessage {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

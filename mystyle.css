@@ -161,7 +161,7 @@ p {
 .small-hero {
   min-height: auto;
   display: block;
-  padding: 35px 0 20px;
+  padding: 20px 0 20px;
 }
 
 /* ===== PAGE ===== */
@@ -1206,7 +1206,6 @@ p {
 /* ===== FIX IMAGE DRAG ISSUE IN CAROUSEL ===== */
 .marquee img {
   pointer-events: none;
-  user-drag: none;
   -webkit-user-drag: none;
 }
 
